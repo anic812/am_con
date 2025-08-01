@@ -84,10 +84,10 @@ class iTunesCountryChecker:
         
         return {
             "am_id": self.am_id,
-            "duration_seconds": round(end_time - start_time, 4),
+            "duration": round(end_time - start_time, 4),
             "total_countries_checked": len(available_countries) + len(unavailable_countries),
-            "available_in_countries": sorted(available_countries),
-            "available_not_in_countries": sorted(unavailable_countries)
+            "available": sorted(available_countries),
+            "not_available": sorted(unavailable_countries)
         }
     
     def check_and_print_json(self, countries: Optional[Dict[str, str]] = None) -> str:
